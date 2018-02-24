@@ -1,2 +1,4 @@
 language: ruby
-install: gem install rails
+rvm:
+  - 4.1.6
+  - jruby
