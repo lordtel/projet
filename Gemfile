@@ -13,5 +13,5 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-ruby '2.1.2'
+ruby '2.3.5'
 
