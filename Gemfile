@@ -33,3 +33,6 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
+gem 'capistrano', '~> 3.0.1'
+gem 'capistrano-rails'
+gem 'capistrano-bundler', '>= 1.1.0'
