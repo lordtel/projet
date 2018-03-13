@@ -25,6 +25,10 @@ gem 'haml-rails', '~> 1.0'
 
 gem 'jquery-rails'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
