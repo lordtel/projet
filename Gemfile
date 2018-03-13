@@ -36,3 +36,6 @@ end
 gem 'capistrano', '~> 3.0.1'
 gem 'capistrano-rails'
 gem 'capistrano-bundler', '>= 1.1.0'
+
+
+gem 'hover-rails'
