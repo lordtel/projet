@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=923cd00828659990a66f9db6e04a459071e9785cf2bea500a70e4535af06d093
 language: ruby
 rvm:
   - 2.3.5
@@ -9,4 +12,10 @@ deploy:
   run : 'rake db:migrate'
 before_script:
   - psql -c 'create database db_test;' -U postgres
- 
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
