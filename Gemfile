@@ -39,3 +39,4 @@ gem 'capistrano-bundler', '>= 1.1.0'
 
 
 gem 'hover-rails'
+gem 'nominatim', '~> 0.0.6'

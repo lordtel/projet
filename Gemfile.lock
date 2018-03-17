@@ -58,6 +58,8 @@ GEM
     crass (1.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -93,11 +95,15 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    nominatim (0.0.6)
+      faraday
+      multi_json
     pg (0.18.4)
     rack (1.6.9)
     rack-test (0.6.3)
@@ -167,7 +173,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.7)
+    uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
@@ -186,6 +192,7 @@ DEPENDENCIES
   haml-rails (~> 1.0)
   hover-rails
   jquery-rails
+  nominatim (~> 0.0.6)
   pg (~> 0.18.4)
   rails (= 4.2.10)
   rails_12factor
