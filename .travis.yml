@@ -9,13 +9,17 @@ deploy:
   api_key:
     secure: f6fM1IIhn5Blek50Tf6JQI7pTIfB1AAarWFCwycoO2kjofF9joMswzCMzsM49ChyDsjVzwtqkt2fYOvYFPQQEQQx9dDfs4CfDsazRXr17sQ40t/RQu+Hhqm1UoMwY9j+SiuyuA/X8AlD/Vwsub76mxJWW0cbnOPxmI2fFTGosMSY2T705l25uASuuJZVC1gr9Ai28pP14P1SjLKACFFJoyELngDXH1+sVgcoCOHpWArlTRpcsPFhW7Xezk8GlDhK4K/arEKfguuNieu7+U5KHuHbUmTh6YNF8ltj1KPkkgrO8c/wMHlAD7vpYw0JYT3drGqzecSZjIEfxdqZz18YHXLcMIILIfucHoy+gQaT6atcuCGnQLjoWVaDFzh6iFthboQ9BpK18fPqo8gnKap93fu0NY0/KlEJ3bqaFA2fK65EVWwLRILzkXhzDHhV8dIpl2wq9dOX94SqQepaVgE6WOGge2hODtxoT3C1xU4JRvfiK8SP5qkYZnx7QV3tUoGuPpMnA1v8CK7CL78m2AGBmKH5XCZHkR3c5oks7vyQbGXLFdEeJD3HHL5kn+TFYS+h8ABdlRbF2i3VBVOnTCCqGN7RWYZExSSkWMpMFylXuszA/dfN7DGNXjEH3fEZar6StsKjCC/jdkJBRMdDdBIxoijc82qVtW/9b24dN1c7YfU=
   app: projet-nb
-  run : 'rake db:migrate'
 before_script:
   - psql -c 'create database db_test;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - bundle exec rspec
+  - bundle exec rake $TASKS
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter format-coverage --output "./coverage/codeclimate.$N.json" -t simplecov
+  - ./cc-test-reporter sum-coverage --output - --parts 1 "coverage/codeclimate.$N.json"
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t simplecov
+  
+matrix:
+  - COVERAGE=true
