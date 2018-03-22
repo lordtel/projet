@@ -13,6 +13,19 @@
   %b Long:
   = @city.long
 
+
+<p>
+  <strong>Météo :</strong>
+  <%= @town.weather['summary']%>
+  <br/>
+  <strong>Température :</strong>
+  <%= @town.weather['temperature']%>°C
+  <br/>
+  <strong>Humidité :</strong>
+  <%= @town.weather['humidity'].to_f * 100 %>
+</p>
+
+
 = link_to 'Edit', edit_city_path(@city)
 \|
 = link_to 'Back', cities_path
