@@ -1,6 +1,7 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=923cd00828659990a66f9db6e04a459071e9785cf2bea500a70e4535af06d093
+    - CF_RUN_PERM_SPECS=false  
 language: ruby
 rvm:
   - 2.3.5
