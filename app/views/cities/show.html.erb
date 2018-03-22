@@ -1,31 +1,37 @@
-%p#notice= notice
 
-%p
-  %b Name:
-  = @city.name
-%p
-  %b Postalcode:
-  = @city.postalcode
-%p
-  %b Lat:
-  = @city.lat
-%p
-  %b Long:
-  = @city.long
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @city.postalcode %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @city.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @city.long %>
+</p>
 
 <p>
   <strong>Météo :</strong>
-  <%= @town.weather['summary']%>
+  <%= @city.weather['summary']%>
   <br/>
   <strong>Température :</strong>
-  <%= @town.weather['temperature']%>°C
+  <%= @city.weather['temperature']%>°C
   <br/>
   <strong>Humidité :</strong>
-  <%= @town.weather['humidity'].to_f * 100 %>
+  <%= @city.weather['humidity'].to_f * 100 %>
 </p>
 
 
-= link_to 'Edit', edit_city_path(@city)
-\|
-= link_to 'Back', cities_path
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>
