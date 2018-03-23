@@ -37,6 +37,7 @@ gem 'capistrano', '~> 3.0.1'
 gem 'capistrano-rails'
 gem 'capistrano-bundler', '>= 1.1.0'
 
+gem 'jbuilder', '~> 2.0'
 
 gem 'hover-rails'
 gem 'nominatim', '~> 0.0.6'
