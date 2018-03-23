@@ -28,6 +28,7 @@ class CitiesControllerTest < ActionController::TestCase
     get :show, id: @city
     assert_response :success
   end
+  
 
   test "should get edit" do
     get :edit, id: @city

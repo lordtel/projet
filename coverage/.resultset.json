@@ -24,7 +24,7 @@
         1,
         null
       ],
-      "/home/cabox/workspace/app/controllers/students_controller.rb": [
+      "/home/cabox/workspace/app/controllers/cities_controller.rb": [
         1,
         1,
         null,
@@ -123,7 +123,11 @@
         1,
         null
       ],
-      "/home/cabox/workspace/app/controllers/cities_controller.rb": [
+      "/home/cabox/workspace/app/controllers/welcome_controller.rb": [
+        1,
+        null
+      ],
+      "/home/cabox/workspace/app/controllers/students_controller.rb": [
         1,
         1,
         null,
@@ -198,12 +202,8 @@
         2,
         null,
         null
-      ],
-      "/home/cabox/workspace/app/controllers/welcome_controller.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1521824693
+    "timestamp": 1521836680
   }
 }
