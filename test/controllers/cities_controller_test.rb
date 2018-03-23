@@ -20,8 +20,13 @@ class CitiesControllerTest < ActionController::TestCase
     assert_difference('City.count') do
       post :create, city: { lat: @city.lat, long: @city.long, name: @city.name, postalcode: @city.postalcode }
     end
-
     assert_redirected_to city_path(assigns(:city))
+  end
+  
+  test "should not save city if blank in record" do
+    assert_no_difference('City.count') do
+      post :create, city: { name: nil, lat: nil, long: nil }
+    end
   end
 
   test "should show city" do

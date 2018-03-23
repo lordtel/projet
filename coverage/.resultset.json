@@ -12,8 +12,8 @@
         null,
         1,
         1,
-        2,
-        2,
+        3,
+        3,
         0,
         0,
         null,
@@ -51,15 +51,15 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
-        1,
-        1,
+        2,
+        2,
         2,
         1,
         null,
-        0,
-        0,
+        2,
+        1,
         null,
         null,
         null,
@@ -96,7 +96,7 @@
         null,
         null,
         1,
-        2,
+        3,
         null,
         null
       ],
@@ -120,10 +120,6 @@
         null
       ],
       "/home/cabox/workspace/app/helpers/welcome_helper.rb": [
-        1,
-        null
-      ],
-      "/home/cabox/workspace/app/controllers/welcome_controller.rb": [
         1,
         null
       ],
@@ -202,8 +198,12 @@
         2,
         null,
         null
+      ],
+      "/home/cabox/workspace/app/controllers/welcome_controller.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1521836680
+    "timestamp": 1521837202
   }
 }
