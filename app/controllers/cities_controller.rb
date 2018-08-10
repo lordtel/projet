@@ -71,4 +71,12 @@ class CitiesController < ApplicationController
     def city_params
       params.require(:city).permit(:name, :postalcode, :lat, :long)
     end
+  
+  def send_cities_mail
+  @city = City.find(params[:id])
+
+  CityMailer.cities_send(@city).deliver
+  flash[:notice] = "Attention request has been sent"
+  redirect_to city_path(@city.id)
+end
 end

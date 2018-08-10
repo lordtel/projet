@@ -3,3 +3,6 @@
 <p>
   The time is now: <%= Time.now %>
 </p>
+
+
+<%= link_to "Send Attention request", :controller => "cities", :action => "send_order_mail", :id => @city.id %>
